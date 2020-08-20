@@ -1,32 +1,33 @@
-
- export type RootStateDataType= {
-    profilePage: ProfilePageType
-    dialogsPage: DialogPageType
-
+type MessagesType={
+  id: number
+  message: string
 }
- export type PostsDataType= {
+type DialogsType={
+    id: number
+    name: string
+}
+type PostsType={
     id: number
     message: string
     likesCount: number
 }
-export type DialogsDataType = {
-    id: number
-    name: string
-}
-export type MessagesDataType = {
-    id: number
-    message: string
-}
-export type ProfilePageType= {
-    postsData: Array<PostsDataType>
-}
-export type DialogPageType= {
-    dialogsData: Array<DialogsDataType>
-    messagesData: Array<MessagesDataType>
-}
-let stateData: RootStateDataType = {
+
+ type ProfilePageType={
+     posts: Array<PostsType>
+ }
+ type DialogsPageType={
+     dialogs: Array<DialogsType>
+     messages: Array<MessagesType>
+ }
+
+ type RootStateType={
+     profilePage: ProfilePageType
+     dialogsPage: DialogsPageType
+ }
+
+ let state: RootStateType = {
     profilePage: {
-        postsData: [
+        posts: [
             {id: 1, message: "Hi,how are you?", likesCount: 22},
             {id: 2, message: "Good", likesCount: 15},
             {id: 3, message: "How do you do?", likesCount: 2},
@@ -35,7 +36,7 @@ let stateData: RootStateDataType = {
         ]
     },
     dialogsPage: {
-        dialogsData: [
+        dialogs: [
             {id: 1, name: "Dimych"},
             {id: 2, name: "Andrey"},
             {id: 3, name: "Sveta"},
@@ -43,7 +44,7 @@ let stateData: RootStateDataType = {
             {id: 5, name: "Viktor"},
             {id: 6, name: "Valera"}
         ],
-        messagesData: [
+        messages: [
             {id: 1, message: "Hi"},
             {id: 2, message: "How is you it-kamasutra?"},
             {id: 3, message: "How are you?"},
@@ -51,8 +52,8 @@ let stateData: RootStateDataType = {
             {id: 5, message: "Good!"},
             {id: 6, message: "Yo"}
         ]
-
     },
 };
 
-export default stateData;
+export default state;
+

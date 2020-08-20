@@ -1,20 +1,13 @@
 import React from 'react';
 import s from "./Post.module.css"
 
-
-
-type PostProps= {
-    mes: string
-    like: number
-}
-
-const Post = (props: PostProps) => {
+const Post = (props: any) => {
     return (
 
             <div className={s.item}>
 
                 <img src="https://avatars.mds.yandex.net/get-pdb/2300765/42437f80-e8ee-4d54-b163-13827b3090f5/s1200?webp=false" />
-                {props.mes}
+                {props.message}
 
                 <div>
                     <span>Like</span> {props.like}
